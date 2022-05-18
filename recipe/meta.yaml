@@ -1,5 +1,5 @@
 {% set name = "blimpy" %}
-{% set version = "2.0.40" %}
+{% set version = "2.0.41" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/blimpy-{{ version }}.tar.gz
-  sha256: 29c0e3715399cc46895cde6a9d6f3f75b348001b8855139fac90c8b0ee1e860a
-  patches:
-    - cython.patch
+  sha256: 580b2b0f7e1b7173cb9a312849a73f5ceba19cb74ee52f3a534cc352cd28e9db
 
 build:
   entry_points:
@@ -35,6 +33,7 @@ requirements:
   host:
     - pip
     - python >=3.6
+    - numpy >=1.19
   run:
     - astropy
     - h5py
