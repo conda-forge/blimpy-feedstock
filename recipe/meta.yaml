@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/blimpy-{{ version }}.tar.gz
   sha256: 580b2b0f7e1b7173cb9a312849a73f5ceba19cb74ee52f3a534cc352cd28e9db
-  patches:
-    - cython.patch
 
 build:
   entry_points:
