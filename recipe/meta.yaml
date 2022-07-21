@@ -1,5 +1,5 @@
 {% set name = "blimpy" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/blimpy-{{ version }}.tar.gz
-  sha256: 738f3495376148a048b8983dafa9922d368abdd4881f49ee7995565ee18173b1
+  sha256: 26e75374cf2010653171cb75d7a642e056fc867e63ba01385104bc1f9d85fe42
 
 build:
   entry_points:
