@@ -26,7 +26,7 @@ build:
     - peek = blimpy.peek:cmd_tool
     - srcname = blimpy.srcname:cmd_tool
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -35,7 +35,7 @@ requirements:
     - python >=3.6
     - numpy >=1.19
   run:
-    - astropy
+    - astropy-base
     - h5py
     - hdf5plugin
     - matplotlib-base
