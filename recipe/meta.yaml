@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/blimpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/blimpy-{{ version }}.tar.gz
   sha256: 5ad923ed50bae2f421ba3024fd03a87046f004789e19b8d5e2fcb6f78c3a6dae
 
 build:
@@ -34,6 +34,7 @@ requirements:
     - pip
     - python >=3.6
     - numpy >=1.19
+    - setuptools
   run:
     - astropy-base
     - h5py
