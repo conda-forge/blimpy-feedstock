@@ -26,13 +26,13 @@ build:
     - peek = blimpy.peek:cmd_tool
     - srcname = blimpy.srcname:cmd_tool
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - numpy >=1.19
     - setuptools
   run:
@@ -45,7 +45,7 @@ requirements:
     - pillow
     - psutil
     - pyparsing ==2.4.7
-    - python >=3.6
+    - python >={{ python_min }}
     - scipy
     - setuptools
     - six
@@ -70,6 +70,7 @@ test:
     - srcname --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ucberkeleyseti/blimpy
