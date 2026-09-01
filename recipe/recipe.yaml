@@ -1,0 +1,92 @@
+schema_version: 1
+
+context:
+  name: blimpy
+  version: "2.1.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blimpy-${{ version }}.tar.gz
+  sha256: 5ad923ed50bae2f421ba3024fd03a87046f004789e19b8d5e2fcb6f78c3a6dae
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - watutil = blimpy.waterfall:cmd_tool
+      - rawutil = blimpy.guppi:cmd_tool
+      - fil2h5 = blimpy.fil2h5:cmd_tool
+      - h52fil = blimpy.h52fil:cmd_tool
+      - h5diag = blimpy.h5diag:cmd_tool
+      - bl_scrunch = blimpy.bl_scrunch:cmd_tool
+      - matchfils = blimpy.match_fils:cmd_tool
+      - bldice = blimpy.dice:cmd_tool
+      - calcload = blimpy.calcload:cmd_tool
+      - rawhdr = blimpy.rawhdr:cmd_tool
+      - stax = blimpy.stax:cmd_tool
+      - stix = blimpy.stix:cmd_tool
+      - peek = blimpy.peek:cmd_tool
+      - srcname = blimpy.srcname:cmd_tool
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}
+    - numpy >=1.19
+    - setuptools
+  run:
+    - astropy-base
+    - h5py
+    - hdf5plugin
+    - matplotlib-base
+    - numpy >=1.19
+    - pandas
+    - pillow
+    - psutil
+    - pyparsing ==2.4.7
+    - python >=${{ python_min }}
+    - scipy
+    - setuptools
+    - six
+
+tests:
+  - python:
+      imports:
+        - blimpy
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}
+    script:
+      - watutil --help
+      - rawutil --help
+      - fil2h5 --help
+      - h52fil --help
+      - h5diag --help
+      - bl_scrunch --help
+      - bldice --help
+      - calcload --help
+      - rawhdr --help
+      - stax --help
+      - stix --help
+      - peek --help
+      - srcname --help
+
+about:
+  summary: Python utilities for Breakthrough Listen SETI observations
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/ucberkeleyseti/blimpy
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
