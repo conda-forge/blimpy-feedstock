@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: blimpy
-  version: "2.1.4"
+  version: 2.1.4
 
 package:
   name: ${{ name|lower }}
@@ -36,7 +36,7 @@ build:
 requirements:
   host:
     - pip
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - numpy >=1.19
     - setuptools
   run:
@@ -65,7 +65,7 @@ tests:
   - requirements:
       run:
         - pip
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
     script:
       - watutil --help
       - rawutil --help
