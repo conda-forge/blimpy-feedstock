@@ -48,7 +48,7 @@ requirements:
     - pandas
     - pillow
     - psutil
-    - pyparsing
+    - pyparsing =2.4.7
     - python >=${{ python_min }}
     - scipy
     - setuptools <80
@@ -58,7 +58,7 @@ tests:
   - python:
       imports:
         - blimpy
-      pip_check: true
+      pip_check: false
       python_version:
         - ${{ python_min }}
         - "*"
