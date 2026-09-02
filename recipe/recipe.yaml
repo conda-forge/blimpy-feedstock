@@ -38,7 +38,7 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - numpy >=1.19
-    - setuptools <80
+    - setuptools
   run:
     - astropy-base
     - h5py
@@ -51,7 +51,7 @@ requirements:
     - pyparsing ==2.4.7
     - python >=${{ python_min }}
     - scipy
-    - setuptools
+    - setuptools <80
     - six
 
 tests:
