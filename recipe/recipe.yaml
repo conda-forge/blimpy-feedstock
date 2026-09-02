@@ -38,7 +38,7 @@ requirements:
     - pip
     - python ${{ python_min }}.*
     - numpy >=1.19
-    - setuptools
+    - setuptools <80
   run:
     - astropy-base
     - h5py
